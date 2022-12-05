@@ -1,19 +1,5 @@
 import Notiflix from 'notiflix';
 
-function createPromise(position, delay) {
-  const shouldResolve = Math.random() > 0.3;
-
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (shouldResolve) {
-        resolve({ position, delay });
-      } else {
-        reject({ position, delay });
-      }
-    }, delay);
-  });
-}
-
 const formEl = document.querySelector('.form');
 formEl.addEventListener('submit', onFormSubmit);
 
@@ -38,4 +24,18 @@ function onFormSubmit(e) {
       });
     delay += step;
   }
+}
+
+function createPromise(position, delay) {
+  const shouldResolve = Math.random() > 0.3;
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (shouldResolve) {
+        resolve({ position, delay });
+      } else {
+        reject({ position, delay });
+      }
+    }, delay);
+  });
 }
