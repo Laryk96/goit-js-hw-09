@@ -13,7 +13,7 @@ refs.btnStop.addEventListener('click', () => {
 
 const colorChange = {
   startChangeColor() {
-    this.intercalId = setInterval(() => {
+    this.intervalId = setInterval(() => {
       refs.body.style.backgroundColor = getRandomHexColor();
     }, 1000);
 
@@ -22,7 +22,7 @@ const colorChange = {
   },
 
   stopChangeColor() {
-    clearInterval(this.intercalId);
+    clearInterval(this.intervalId);
     refs.btnStart.disabled = false;
     refs.btnStop.disabled = true;
   },
@@ -49,9 +49,9 @@ function getRandomHexColor() {
 // }
 
 // function changeColor() {
-//   const intercalId = setInterval(() => {
+//   const intervalId = setInterval(() => {
 //     if (refs.btnStop.disabled) {
-//       clearInterval(intercalId);
+//       clearInterval(intervalId);
 //       return;
 //     }
 //     refs.body.style.backgroundColor = getRandomHexColor();

@@ -54,6 +54,7 @@ class Timer {
         this.isActive = false;
         clearInterval(this.intervalId);
       }
+
       this.render(time);
     }, 1000);
   }
